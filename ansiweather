@@ -1,12 +1,12 @@
 #!/bin/sh
 
 #
-# AnsiWeather 1.18.0
-# Copyright (c) 2013-2022, Frederic Cambus
+# AnsiWeather 1.19.0
+# Copyright (c) 2013-2023, Frederic Cambus
 # https://github.com/fcambus/ansiweather
 #
 # Created: 2013-08-29
-# Last Updated: 2021-09-14
+# Last Updated: 2023-01-09
 #
 # AnsiWeather is released under the BSD 2-Clause license.
 # See LICENSE file for details.
@@ -16,7 +16,7 @@
 
 ###[ Configuration options ]###################################################
 
-LC_ALL=C; export LC_ALL
+LC_NUMERIC=C; export LC_NUMERIC
 
 if [ -n "$ANSIWEATHERRC" ] ; then
 	config_file="$ANSIWEATHERRC"
@@ -68,7 +68,7 @@ do
 		h) show_humidity=${OPTARG};;
 		p) show_pressure=${OPTARG};;
 		d) show_daylight=${OPTARG};;
-		v) echo "AnsiWeather 1.18.0" && exit 0;;
+		v) echo "AnsiWeather 1.19.0" && exit 0;;
 		\?) exit 64;; # EX_USAGE
 	esac
 done
