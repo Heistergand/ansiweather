@@ -99,12 +99,17 @@ and daylight data) for Rzeszow, Poland:
 
 ## Configuration
 
-The default config file is ~/.ansiweatherrc. The environment variable
-ANSIWEATHERRC can be set to override this. The following configuration
-options (detailed below) are available and should be set according to
-your location and preferences.
+Configuration is loaded from the following locations, in order:
 
-Example: `~/.ansiweatherrc`
+1. The file specified by the `ANSIWEATHERRC` environment variable, if set.
+2. `$XDG_CONFIG_HOME/ansiweather/config`
+3. `~/.config/ansiweather/config`
+4. `~/.ansiweatherrc`
+
+The following configuration options (detailed below) are available and should
+be set according to your location and preferences.
+
+Example: `~/.config/ansiweather/config`
 
 	location:Rzeszow,PL
 	fetch_cmd:ftp -V -o -
@@ -202,6 +207,9 @@ Default: `false`
 Toggle UV Index, wind, humidity, and/or pressure display. Values can be either
 `true` or `false`.
 
+The UV Index represents a single daily value rather than the UV Index at the
+current time.
+
 	show_uvi:true
 	show_wind:true
 	show_humidity:true
@@ -217,14 +225,19 @@ Toggle daylight display. Value can be either `true` or `false`.
 
 Default: `false`
 
-### Date and Time format
+### Date format
 
-Configure date and time format display. See Unix date formatting docs
-for details.
+Configure the date format used for forecast entries. See Unix date
+formatting documentation for details.
 
 	dateformat:%a %b %d
 
 Default: `%a %b %d`
+
+### Time format
+
+Configure the time format used for sunrise and sunset. See Unix date
+formatting documentation for details.
 
 	timeformat:%b %d %r
 
